@@ -4,293 +4,1107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACapital Financeira | Crédito Fácil e Rápido</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --verde: #7fce42;
+      --verde-escuro: #5ca52a;
       --azul: #2262d5;
+      --azul-escuro: #1a4fb0;
       --cinza: #f5f7fa;
+      --cinza-escuro: #e8edf5;
       --escuro: #1f2937;
+      --branco: #ffffff;
+      --gradiente-azul: linear-gradient(135deg, var(--azul), #1b4fb3);
+      --gradiente-verde: linear-gradient(135deg, var(--verde), var(--verde-escuro));
+      --sombra: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --sombra-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     body {
+      font-family: 'Poppins', sans-serif;
       background: var(--cinza);
       color: var(--escuro);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
     }
 
     a {
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, var(--azul), #1b4fb3);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-    }
-
-    header h1 span {
-      color: var(--verde);
-    }
-
-    header p {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      opacity: 0.95;
-    }
-
-    .cta-header {
-      margin-top: 25px;
-    }
-
-    .cta-header a {
-      background: var(--verde);
-      color: #08350b;
-      padding: 16px 30px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    /* SEÇÕES */
-    section {
-      padding: 70px 20px;
+    .container {
+      width: 100%;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: var(--sombra);
+    }
+
+    .btn-verde {
+      background: var(--gradiente-verde);
+      color: #08350b;
+    }
+
+    .btn-verde:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sombra-hover);
+      color: #08350b;
+    }
+
+    .btn-azul {
+      background: var(--gradiente-azul);
+      color: white;
+    }
+
+    .btn-azul:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sombra-hover);
+      color: white;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
 
     .section-title h2 {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       color: var(--azul);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 4px;
+      background: var(--gradiente-verde);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
     }
 
     .section-title p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #555;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    /* CARDS */
+    /* HEADER */
+    header {
+      background: var(--gradiente-azul);
+      color: white;
+      padding: 30px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-icon {
+      background: var(--verde);
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #08350b;
+    }
+
+    .logo-text h1 {
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+
+    .logo-text h1 span {
+      color: var(--verde);
+    }
+
+    .logo-text p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--verde);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0;
+      background: var(--gradiente-azul);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      opacity: 0.1;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero h2 span {
+      color: var(--verde);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    /* SERVIÇOS */
+    .servicos {
+      padding: 100px 0;
+      background: var(--cinza);
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
     .card {
-      background: white;
+      background: var(--branco);
       border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      padding: 40px 30px;
+      box-shadow: var(--sombra);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-10px);
+      box-shadow: var(--sombra-hover);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background: var(--gradiente-verde);
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--gradiente-azul);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      color: white;
+      font-size: 1.8rem;
     }
 
     .card h3 {
       color: var(--azul);
-      margin-bottom: 15px;
-      font-size: 1.4rem;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
     }
 
     .card ul {
       list-style: none;
+      margin-bottom: 30px;
     }
 
     .card ul li {
-      margin-bottom: 10px;
-      padding-left: 20px;
+      margin-bottom: 12px;
+      padding-left: 30px;
       position: relative;
     }
 
     .card ul li::before {
-      content: "✔";
-      color: var(--verde);
+      content: "✓";
       position: absolute;
       left: 0;
-    }
-
-    .card a {
-      display: block;
-      margin-top: 20px;
-      text-align: center;
-      background: var(--verde);
-      color: #08350b;
-      padding: 12px;
-      border-radius: 10px;
+      color: var(--verde);
       font-weight: bold;
-    }
-
-    /* FAIXA DE DESTAQUE */
-    .highlight {
-      background: linear-gradient(135deg, var(--verde), #6abf38);
-      color: #08350b;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .highlight h2 {
-      font-size: 2.3rem;
-      margin-bottom: 15px;
-    }
-
-    .highlight p {
       font-size: 1.2rem;
+    }
+
+    /* DESTAQUE */
+    .destaque {
+      padding: 100px 0;
+      background: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+
+    .destaque::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(34, 98, 213, 0.85);
+    }
+
+    .destaque-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .destaque h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .destaque p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+
+    /* SOBRE */
+    .sobre {
+      padding: 100px 0;
+      background: var(--branco);
+    }
+
+    .sobre-content {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .sobre-img {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--sombra-hover);
+    }
+
+    .sobre-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .sobre-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .sobre-text {
+      flex: 1;
+    }
+
+    .sobre-text h2 {
+      font-size: 2.5rem;
+      color: var(--azul);
       margin-bottom: 25px;
     }
 
-    .highlight a {
-      background: var(--azul);
-      color: white;
-      padding: 15px 35px;
-      border-radius: 50px;
+    .sobre-text p {
+      margin-bottom: 20px;
       font-size: 1.1rem;
-      font-weight: bold;
+    }
+
+    .sobre-vantagens {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .vantagem {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .vantagem i {
+      color: var(--verde);
+      font-size: 1.5rem;
     }
 
     /* CONTATO */
-    .contact {
-      text-align: center;
+    .contato {
+      padding: 100px 0;
+      background: var(--cinza-escuro);
     }
 
-    .contact p {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
+    .contato-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
     }
 
-    .contact strong {
-      font-size: 1.2rem;
+    .contato-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .info-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradiente-azul);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .info-text h4 {
+      color: var(--azul);
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+
+    .info-text p {
+      color: #555;
+    }
+
+    .contato-form {
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+    }
+
+    .contato-form h3 {
+      color: var(--azul);
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--escuro);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--azul);
+      outline: none;
     }
 
     /* FOOTER */
     footer {
       background: #0f172a;
       color: #cbd5e1;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.95rem;
+      padding: 60px 0 30px;
     }
 
-    footer span {
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-logo h3 span {
       color: var(--verde);
+    }
+
+    .footer-links h4,
+    .footer-contato h4 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+    }
+
+    .footer-links a:hover {
+      color: var(--verde);
+    }
+
+    .footer-contato p {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contato i {
+      color: var(--verde);
+      width: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: #1e293b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .footer-social a:hover {
+      background: var(--azul);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .copyright span {
+      color: var(--verde);
+    }
+
+    /* ANIMAÇÕES */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 2.8rem;
+      }
+      
+      .sobre-content {
+        flex-direction: column;
+      }
+      
+      .sobre-img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background: var(--gradiente-azul);
+        width: 100%;
+        padding: 30px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      
+      nav ul.active {
+        left: 0;
+      }
+      
+      .hero h2 {
+        font-size: 2.3rem;
+      }
+      
+      .hero-btns {
+        flex-direction: column;
+      }
+      
+      .section-title h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        padding: 80px 0;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .sobre-vantagens {
+        grid-template-columns: 1fr;
+      }
+      
+      .cards {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
-    <h1><span>ACapital</span> Financeira</h1>
-    <p>Crédito fácil, rápido e seguro para você e sua família</p>
-
-    <div class="cta-header">
-      <a href="https://wa.me/5592992637013" target="_blank">
-        💬 Falar no WhatsApp agora
-      </a>
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="logo-text">
+          <h1><span>ACapital</span> Financeira</h1>
+          <p>Crédito fácil e rápido</p>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://wa.me/5592985954909" class="btn btn-verde">WhatsApp</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- SERVIÇOS -->
-  <section>
-    <div class="section-title">
-      <h2>Nossas Soluções Financeiras</h2>
-      <p>Escolha a opção ideal para você e faça sua simulação sem compromisso</p>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h2>Crédito <span>fácil e rápido</span> para você e sua família</h2>
+        <p>Na ACapital Financeira, oferecemos as melhores soluções financeiras com condições especiais, atendimento personalizado e a aprovação em até 24h.</p>
+        
+        <div class="hero-btns">
+          <a href="https://wa.me/5592985954909" class="btn btn-verde">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
+          <a href="#servicos" class="btn btn-azul">
+            <i class="fas fa-search-dollar"></i> Conhecer Serviços
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Antecipação FGTS</h3>
-        <ul>
-          <li>Sem parcelas mensais</li>
-          <li>Desconto direto no FGTS</li>
-          <li>Mesmo negativado</li>
-          <li>Dinheiro rápido na conta</li>
-        </ul>
-        <a href="https://wa.me/5592992637013">Simular FGTS</a>
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossas Soluções Financeiras</h2>
+        <p>Escolha a opção ideal para você e faça sua simulação sem compromisso</p>
       </div>
-
-      <div class="card">
-        <h3>Consignado CLT</h3>
-        <ul>
-          <li>Desconto em folha</li>
-          <li>Juros reduzidos</li>
-          <li>Parcelas fixas</li>
-          <li>Liberação rápida</li>
-        </ul>
-        <a href="https://wa.me/5592992637013">Simular CLT</a>
-      </div>
-
-      <div class="card">
-        <h3>Aposentados e Pensionistas</h3>
-        <ul>
-          <li>Taxas reduzidas</li>
-          <li>Aproveite a margem</li>
-          <li>Sem burocracia</li>
-          <li>Aprovação rápida</li>
-        </ul>
-        <a href="https://wa.me/5592992637013">Simular Agora</a>
-      </div>
-
-      <div class="card">
-        <h3>Bolsa Família</h3>
-        <ul>
-          <li>Recebendo no Caixa Tem</li>
-          <li>Parcelas acessíveis</li>
-          <li>Processo simples</li>
-          <li>Atendimento humanizado</li>
-        </ul>
-        <a href="https://wa.me/5592992637013">Consultar</a>
+      
+      <div class="cards">
+        <div class="card fade-in">
+          <div class="card-icon">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <h3>Antecipação FGTS</h3>
+          <ul>
+            <li>Sem parcelas mensais</li>
+            <li>Desconto direto no FGTS</li>
+            <li>Mesmo negativado</li>
+            <li>Dinheiro rápido na conta</li>
+          </ul>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular a Antecipação do FGTS" class="btn btn-verde">Simular FGTS</a>
+        </div>
+        
+        <div class="card fade-in">
+          <div class="card-icon">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <h3>Consignado CLT</h3>
+          <ul>
+            <li>Desconto em folha</li>
+            <li>Juros reduzidos</li>
+            <li>Parcelas fixas</li>
+            <li>Liberação rápida</li>
+          </ul>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular o Consignado CLT" class="btn btn-verde">Simular CLT</a>
+        </div>
+        
+        <div class="card fade-in">
+          <div class="card-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Aposentados e Pensionistas</h3>
+          <ul>
+            <li>Taxas reduzidas</li>
+            <li>Aproveite a margem</li>
+            <li>Sem burocracia</li>
+            <li>Aprovação rápida</li>
+          </ul>
+          <a href="https://wa.me/559298595490913?text=Olá! Gostaria de simular crédito para aposentado/pensionista" class="btn btn-verde">Simular Agora</a>
+        </div>
+        
+        <div class="card fade-in">
+          <div class="card-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>Bolsa Família</h3>
+          <ul>
+            <li>Recebendo no Caixa Tem</li>
+            <li>Parcelas acessíveis</li>
+            <li>Processo simples</li>
+            <li>Atendimento humanizado</li>
+          </ul>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular crédito no Bolsa Família" class="btn btn-verde">Consultar</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- DESTAQUE -->
-  <div class="highlight">
-    <h2>Simulação 100% Gratuita</h2>
-    <p>Descubra agora quanto você pode receber hoje mesmo</p>
-    <a href="https://wa.me/5592992637013">Fazer Simulação</a>
-  </div>
+  <section class="destaque">
+    <div class="container">
+      <div class="destaque-content fade-in">
+        <h2>Simulação 100% Gratuita</h2>
+        <p>Descubra agora quanto você pode receber hoje mesmo sem compromisso</p>
+        <a href="https://wa.me/5592985954909" class="btn btn-verde">Fazer Simulação Agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sobre a ACapital Financeira</h2>
+        <p>Conheça nossa história e diferenciais no mercado financeiro</p>
+      </div>
+      
+      <div class="sobre-content">
+        <div class="sobre-img fade-in">
+          <!-- Espaço para sua imagem -->
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe ACapital Financeira">
+          <!-- Para usar sua própria imagem, substitua o link acima pelo caminho da sua imagem -->
+        </div>
+        
+        <div class="sobre-text fade-in">
+          <h2>Oferecemos as melhores soluções financeiras</h2>
+          <p>A ACapital Financeira nasceu com o objetivo de simplificar o acesso ao crédito para todos os brasileiros, com transparência, agilidade e condições que cabem no seu bolso.</p>
+          <p>Nossa equipe é especializada em encontrar a melhor solução para cada perfil, sempre com atendimento humanizado e personalizado.</p>
+          
+          <div class="sobre-vantagens">
+            <div class="vantagem">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <h4>Segurança</h4>
+                <p>Processo 100% seguro e confiável</p>
+              </div>
+            </div>
+            <div class="vantagem">
+              <i class="fas fa-bolt"></i>
+              <div>
+                <h4>Agilidade</h4>
+                <p>Resposta em até 24h úteis</p>
+              </div>
+            </div>
+            <div class="vantagem">
+              <i class="fas fa-handshake"></i>
+              <div>
+                <h4>Transparência</h4>
+                <p>Sem letras miúdas ou pegadinhas</p>
+              </div>
+            </div>
+            <div class="vantagem">
+              <i class="fas fa-star"></i>
+              <div>
+                <h4>Qualidade</h4>
+                <p>Atendimento de excelência</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CONTATO -->
-  <section class="contact">
-    <div class="section-title">
-      <h2>Fale Conosco</h2>
-      <p>Estamos prontos para te atender</p>
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="section-title">
+        <h2>Fale Conosco</h2>
+        <p>Estamos prontos para te atender e tirar todas as suas dúvidas</p>
+      </div>
+      
+      <div class="contato-content">
+        <div class="contato-info fade-in">
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-text">
+              <h4>Telefones</h4>
+              <p>(92) 4102-3246</p>
+              <p>(92) 99263-7013</p>
+              <p>(92) 98595-4909</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-text">
+              <h4>Endereço</h4>
+              <p>Rua Acajá, 04 – Flores</p>
+              <p>Manaus - AM</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-text">
+              <h4>Horário de Atendimento</h4>
+              <p>Segunda a Sexta: 8h às 18h</p>
+              <p>Sábado: 8h às 12h</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="info-text">
+              <h4>WhatsApp</h4>
+              <p>Atendimento rápido via WhatsApp</p>
+              <a href="https://wa.me/5592985954909" class="btn btn-verde" style="margin-top: 10px;">Conversar Agora</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contato-form fade-in">
+          <h3>Envie sua mensagem</h3>
+          <form id="formContato">
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <input type="text" id="nome" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="servico">Serviço de Interesse</label>
+              <select id="servico" required>
+                <option value="">Selecione uma opção</option>
+                <option value="fgts">Antecipação FGTS</option>
+                <option value="clt">Consignado CLT</option>
+                <option value="aposentado">Aposentados e Pensionistas</option>
+                <option value="bolsa-familia">Bolsa Família</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-azul" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <p><strong>📞 Telefones:</strong></p>
-    <p>(92) 4102-3246 | (92) 99263-7013 | (92) 98595-4909</p>
-
-    <p><strong>📍 Endereço:</strong></p>
-    <p>Rua Acajá, 04 – Flores</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p><span>ACapital Financeira</span> © 2026</p>
-    <p>Segurança, transparência e confiança em primeiro lugar.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3><span>ACapital</span> Financeira</h3>
+          <p>Segurança, transparência e confiança em primeiro lugar.</p>
+          
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5592985954909"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contato">
+          <h4>Contato</h4>
+          <p><i class="fas fa-phone-alt"></i> (92) 4102-3246</p>
+          <p><i class="fas fa-mobile-alt"></i> (92) 99263-7013</p>
+          <p><i class="fas fa-map-marker-alt"></i> Rua Acajá, 04 – Flores</p>
+          <p><i class="fas fa-envelope"></i> contato@acapitalfinanceira.com.br</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p><span>ACapital Financeira</span> © 2026 - Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0000-00</p>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    // Menu mobile toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuToggle.innerHTML = navMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Fecha menu ao clicar em um link
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+    
+    // Animação de scroll
+    const observerOptions = {
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+    
+    // Observa elementos com a classe .fade-in
+    document.querySelectorAll('.card, .fade-in').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Form submission
+    document.getElementById('formContato').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Coletar dados do formulário
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const servico = document.getElementById('servico').value;
+      const mensagem = document.getElementById('mensagem').value;
+      
+      // Mensagem para WhatsApp
+      const texto = `Olá! Gostaria de mais informações sobre serviços financeiros.%0A%0ANome: ${nome}%0ATelefone: ${telefone}%0AServiço: ${servico}%0AMensagem: ${mensagem}`;
+      
+      // Redirecionar para WhatsApp
+      window.open(`https://wa.me/5592985954909?text=${texto}`, '_blank');
+      
+      // Limpar formulário
+      this.reset();
+      
+      // Feedback visual
+      const btn = this.querySelector('button');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
+      btn.style.background = 'var(--verde)';
+      
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+      }, 3000);
+    });
+    
+    // Suaviza rolagem para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
