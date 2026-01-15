@@ -1,11 +1,296 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACapital Financeira | Crédito Fácil e Rápido</title>
+
+  <style>
+    :root {
+      --verde: #7fce42;
+      --azul: #2262d5;
+      --cinza: #f5f7fa;
+      --escuro: #1f2937;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      background: var(--cinza);
+      color: var(--escuro);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul), #1b4fb3);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    header h1 span {
+      color: var(--verde);
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+
+    .cta-header {
+      margin-top: 25px;
+    }
+
+    .cta-header a {
+      background: var(--verde);
+      color: #08350b;
+      padding: 16px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    /* SEÇÕES */
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: "✔";
+      color: var(--verde);
+      position: absolute;
+      left: 0;
+    }
+
+    .card a {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      background: var(--verde);
+      color: #08350b;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    /* FAIXA DE DESTAQUE */
+    .highlight {
+      background: linear-gradient(135deg, var(--verde), #6abf38);
+      color: #08350b;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .highlight h2 {
+      font-size: 2.3rem;
+      margin-bottom: 15px;
+    }
+
+    .highlight p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .highlight a {
+      background: var(--azul);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    /* CONTATO */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .contact strong {
+      font-size: 1.2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+    }
+
+    footer span {
+      color: var(--verde);
+    }
+  </style>
 </head>
 <body>
-  <h1>Meu site está no ar 🎉</h1>
-  <p>Site hospedado gratuitamente no GitHub Pages.</p>
+
+  <!-- HEADER -->
+  <header>
+    <h1><span>ACapital</span> Financeira</h1>
+    <p>Crédito fácil, rápido e seguro para você e sua família</p>
+
+    <div class="cta-header">
+      <a href="https://wa.me/5592992637013" target="_blank">
+        💬 Falar no WhatsApp agora
+      </a>
+    </div>
+  </header>
+
+  <!-- SERVIÇOS -->
+  <section>
+    <div class="section-title">
+      <h2>Nossas Soluções Financeiras</h2>
+      <p>Escolha a opção ideal para você e faça sua simulação sem compromisso</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Antecipação FGTS</h3>
+        <ul>
+          <li>Sem parcelas mensais</li>
+          <li>Desconto direto no FGTS</li>
+          <li>Mesmo negativado</li>
+          <li>Dinheiro rápido na conta</li>
+        </ul>
+        <a href="https://wa.me/5592992637013">Simular FGTS</a>
+      </div>
+
+      <div class="card">
+        <h3>Consignado CLT</h3>
+        <ul>
+          <li>Desconto em folha</li>
+          <li>Juros reduzidos</li>
+          <li>Parcelas fixas</li>
+          <li>Liberação rápida</li>
+        </ul>
+        <a href="https://wa.me/5592992637013">Simular CLT</a>
+      </div>
+
+      <div class="card">
+        <h3>Aposentados e Pensionistas</h3>
+        <ul>
+          <li>Taxas reduzidas</li>
+          <li>Aproveite a margem</li>
+          <li>Sem burocracia</li>
+          <li>Aprovação rápida</li>
+        </ul>
+        <a href="https://wa.me/5592992637013">Simular Agora</a>
+      </div>
+
+      <div class="card">
+        <h3>Bolsa Família</h3>
+        <ul>
+          <li>Recebendo no Caixa Tem</li>
+          <li>Parcelas acessíveis</li>
+          <li>Processo simples</li>
+          <li>Atendimento humanizado</li>
+        </ul>
+        <a href="https://wa.me/5592992637013">Consultar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUE -->
+  <div class="highlight">
+    <h2>Simulação 100% Gratuita</h2>
+    <p>Descubra agora quanto você pode receber hoje mesmo</p>
+    <a href="https://wa.me/5592992637013">Fazer Simulação</a>
+  </div>
+
+  <!-- CONTATO -->
+  <section class="contact">
+    <div class="section-title">
+      <h2>Fale Conosco</h2>
+      <p>Estamos prontos para te atender</p>
+    </div>
+
+    <p><strong>📞 Telefones:</strong></p>
+    <p>(92) 4102-3246 | (92) 99263-7013 | (92) 98595-4909</p>
+
+    <p><strong>📍 Endereço:</strong></p>
+    <p>Rua Acajá, 04 – Flores</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><span>ACapital Financeira</span> © 2026</p>
+    <p>Segurança, transparência e confiança em primeiro lugar.</p>
+  </footer>
+
 </body>
 </html>
