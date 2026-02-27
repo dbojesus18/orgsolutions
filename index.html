@@ -146,17 +146,11 @@
       width: auto;
       max-width: 300px;
       object-fit: contain;
-      filter: brightness(0) invert(1); /* Isso torna a logo branca se ela for escura */
       transition: transform 0.3s ease;
     }
 
     .logo img:hover {
       transform: scale(1.05);
-    }
-
-    /* Caso sua logo seja clara e precise ficar original, remova o filter acima e use esta classe */
-    .logo img.original {
-      filter: none;
     }
 
     nav ul {
@@ -398,13 +392,14 @@
 
     .sobre-text h2 {
       font-size: 2.5rem;
-      color: var(--azul);
+      color: var(--verde);
       margin-bottom: 25px;
     }
 
     .sobre-text p {
       margin-bottom: 20px;
       font-size: 1.1rem;
+      color: #e0e0e0;
     }
 
     .sobre-vantagens {
@@ -422,7 +417,37 @@
 
     .vantagem i {
       color: var(--verde);
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .vantagem h4 {
+      color: var(--verde);
+      margin-bottom: 5px;
+    }
+
+    .vantagem p {
+      color: #e0e0e0;
+      font-size: 0.95rem;
+    }
+
+    /* AJUSTES PARA FUNDO ESCURO */
+    .servicos .section-title p,
+    .sobre .section-title p {
+      color: #e0e0e0;
+    }
+
+    .servicos .section-title h2,
+    .sobre .section-title h2 {
+      color: var(--verde);
+    }
+
+    .servicos .section-title h2::after,
+    .sobre .section-title h2::after {
+      background: var(--gradiente-verde);
+    }
+
+    .servicos .card {
+      background: rgba(255, 255, 255, 0.95);
     }
 
     /* CONTATO */
@@ -541,7 +566,6 @@
       height: 50px;
       width: auto;
       margin-bottom: 15px;
-      filter: brightness(0) invert(1);
     }
 
     .footer-links h4,
@@ -709,10 +733,9 @@
   <!-- HEADER -->
   <header>
     <div class="container header-content">
-     <div class="logo">
-  <img src="https://github.com/dbojesus18/orgsolutions/blob/main/8.png" alt="Assessoria Capital Financeira" class="original">
-</div>
-
+      <div class="logo">
+        <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/8.png" alt="Assessoria Capital Financeira">
+      </div>
       
       <button class="menu-toggle" id="menuToggle">
         <i class="fas fa-bars"></i>
@@ -838,7 +861,6 @@
       
       <div class="sobre-content">
         <div class="sobre-img fade-in">
-          <!-- Espaço para sua imagem -->
           <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe Assessoria Capital Financeira">
         </div>
         
@@ -852,28 +874,28 @@
               <i class="fas fa-shield-alt"></i>
               <div>
                 <h4>Segurança</h4>
-                <p>Processo 100% seguro e confiável</p>
+                <p>Processo 100% seguro</p>
               </div>
             </div>
             <div class="vantagem">
               <i class="fas fa-bolt"></i>
               <div>
                 <h4>Agilidade</h4>
-                <p>Resposta em até 24h úteis</p>
+                <p>Resposta em 24h</p>
               </div>
             </div>
             <div class="vantagem">
               <i class="fas fa-handshake"></i>
               <div>
                 <h4>Transparência</h4>
-                <p>Sem letras miúdas ou pegadinhas</p>
+                <p>Sem letras miúdas</p>
               </div>
             </div>
             <div class="vantagem">
               <i class="fas fa-star"></i>
               <div>
                 <h4>Qualidade</h4>
-                <p>Atendimento de excelência</p>
+                <p>Atendimento excelente</p>
               </div>
             </div>
           </div>
@@ -920,8 +942,8 @@
               <i class="fas fa-clock"></i>
             </div>
             <div class="info-text">
-              <h4>Horário de Atendimento</h4>
-              <p>Segunda a Sexta: 8h às 18h</p>
+              <h4>Horário</h4>
+              <p>Seg a Sex: 8h às 18h</p>
               <p>Sábado: 8h às 12h</p>
             </div>
           </div>
@@ -932,7 +954,7 @@
             </div>
             <div class="info-text">
               <h4>WhatsApp</h4>
-              <p>Atendimento rápido via WhatsApp</p>
+              <p>Atendimento rápido</p>
               <a href="https://wa.me/5592992637013" class="btn btn-verde" style="margin-top: 10px;">Conversar Agora</a>
             </div>
           </div>
@@ -954,12 +976,11 @@
             <div class="form-group">
               <label for="servico">Serviço de Interesse</label>
               <select id="servico" required>
-                <option value="">Selecione uma opção</option>
+                <option value="">Selecione</option>
                 <option value="fgts">Antecipação FGTS</option>
                 <option value="clt">Consignado CLT</option>
-                <option value="aposentado">Aposentados e Pensionistas</option>
+                <option value="aposentado">Aposentados</option>
                 <option value="bolsa-familia">Bolsa Família</option>
-                <option value="outro">Outro</option>
               </select>
             </div>
             
@@ -982,10 +1003,9 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <!-- Logo no footer (opcional) -->
-          <img src="https://github.com/dbojesus18/orgsolutions/blob/main/8.png" alt="Assessoria Capital Financeira">
+          <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/8.png" alt="Assessoria Capital Financeira">
           <h3><span>Assessoria Capital</span> Financeira</h3>
-          <p>Segurança, transparência e confiança em primeiro lugar.</p>
+          <p>Segurança, transparência e confiança.</p>
           
           <div class="footer-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1015,8 +1035,7 @@
       </div>
       
       <div class="copyright">
-        <p><span>Assessoria Capital Financeira</span> © 2026 - Todos os direitos reservados.</p>
-        <p>CNPJ: 00.000.000/0000-00</p>
+        <p><span>Assessoria Capital Financeira</span> © 2026</p>
       </div>
     </div>
   </footer>
@@ -1054,7 +1073,6 @@
       });
     }, observerOptions);
     
-    // Observa elementos com a classe .fade-in
     document.querySelectorAll('.card, .fade-in').forEach(el => {
       observer.observe(el);
     });
@@ -1063,22 +1081,17 @@
     document.getElementById('formContato').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Coletar dados do formulário
       const nome = document.getElementById('nome').value;
       const telefone = document.getElementById('telefone').value;
       const servico = document.getElementById('servico').value;
       const mensagem = document.getElementById('mensagem').value;
       
-      // Mensagem para WhatsApp
-      const texto = `Olá! Gostaria de mais informações sobre serviços financeiros.%0A%0ANome: ${nome}%0ATelefone: ${telefone}%0AServiço: ${servico}%0AMensagem: ${mensagem}`;
+      const texto = `Olá! Gostaria de mais informações.%0A%0ANome: ${nome}%0ATelefone: ${telefone}%0AServiço: ${servico}%0AMensagem: ${mensagem}`;
       
-      // Redirecionar para WhatsApp
       window.open(`https://wa.me/5592992637013?text=${texto}`, '_blank');
       
-      // Limpar formulário
       this.reset();
       
-      // Feedback visual
       const btn = this.querySelector('button');
       const originalText = btn.innerHTML;
       btn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
@@ -1090,7 +1103,7 @@
       }, 3000);
     });
     
-    // Suaviza rolagem para âncoras
+    // Suaviza rolagem
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1107,4 +1120,6 @@
         }
       });
     });
-  </
+  </script>
+</body>
+</html>
