@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assessoria Capital Financeira</title>
+  <title>ACapital Financeira | Crédito Fácil e Rápido</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
@@ -125,7 +125,7 @@
     header {
       background: var(--gradiente-azul);
       color: white;
-      padding: 20px 0;
+      padding: 30px 0;
       position: relative;
       overflow: hidden;
     }
@@ -139,24 +139,33 @@
     .logo {
       display: flex;
       align-items: center;
+      gap: 15px;
     }
 
-    .logo img {
-      height: 70px;
-      width: auto;
-      max-width: 300px;
-      object-fit: contain;
-      filter: brightness(0) invert(1); /* Isso torna a logo branca se ela for escura */
-      transition: transform 0.3s ease;
+    .logo-icon {
+      background: var(--verde);
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #08350b;
     }
 
-    .logo img:hover {
-      transform: scale(1.05);
+    .logo-text h1 {
+      font-size: 1.8rem;
+      line-height: 1.2;
     }
 
-    /* Caso sua logo seja clara e precise ficar original, remova o filter acima e use esta classe */
-    .logo img.original {
-      filter: none;
+    .logo-text h1 span {
+      color: var(--verde);
+    }
+
+    .logo-text p {
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
 
     nav ul {
@@ -537,13 +546,6 @@
       color: var(--verde);
     }
 
-    .footer-logo img {
-      height: 50px;
-      width: auto;
-      margin-bottom: 15px;
-      filter: brightness(0) invert(1);
-    }
-
     .footer-links h4,
     .footer-contato h4 {
       font-size: 1.3rem;
@@ -672,10 +674,6 @@
       .section-title h2 {
         font-size: 2.3rem;
       }
-
-      .logo img {
-        height: 50px;
-      }
     }
 
     @media (max-width: 576px) {
@@ -698,10 +696,6 @@
       .cards {
         grid-template-columns: 1fr;
       }
-
-      .logo img {
-        height: 40px;
-      }
     }
   </style>
 </head>
@@ -710,9 +704,13 @@
   <header>
     <div class="container header-content">
       <div class="logo">
-        <!-- ESPAÇO PARA SUA LOGO - Substitua o src pelo caminho da sua imagem -->
-        <img src="8.png" alt="Assessoria Capital Financeira" class="original">
-        <!-- Se a logo ficar muito escura, remova a classe "original" e ela ficará branca -->
+        <div class="logo-icon">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <div class="logo-text">
+          <h1><span>ACapital</span> Financeira</h1>
+          <p>Crédito fácil e rápido</p>
+        </div>
       </div>
       
       <button class="menu-toggle" id="menuToggle">
@@ -725,7 +723,7 @@
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
-          <li><a href="https://wa.me/5592992637013" class="btn btn-verde">WhatsApp</a></li>
+          <li><a href="https://wa.me/5592985954909" class="btn btn-verde">WhatsApp</a></li>
         </ul>
       </nav>
     </div>
@@ -736,10 +734,10 @@
     <div class="container">
       <div class="hero-content fade-in">
         <h2>Crédito <span>fácil e rápido</span> para você e sua família</h2>
-        <p>Na Assessoria Capital Financeira, oferecemos as melhores soluções financeiras com condições especiais, atendimento personalizado e a aprovação mais rápida do mercado.</p>
+        <p>Na ACapital Financeira, oferecemos as melhores soluções financeiras com condições especiais, atendimento personalizado e a aprovação em até 24h.</p>
         
         <div class="hero-btns">
-          <a href="https://wa.me/5592992637013" class="btn btn-verde">
+          <a href="https://wa.me/5592985954909" class="btn btn-verde">
             <i class="fab fa-whatsapp"></i> Falar no WhatsApp
           </a>
           <a href="#servicos" class="btn btn-azul">
@@ -770,7 +768,7 @@
             <li>Mesmo negativado</li>
             <li>Dinheiro rápido na conta</li>
           </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular a Antecipação do FGTS" class="btn btn-verde">Simular FGTS</a>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular a Antecipação do FGTS" class="btn btn-verde">Simular FGTS</a>
         </div>
         
         <div class="card fade-in">
@@ -784,7 +782,7 @@
             <li>Parcelas fixas</li>
             <li>Liberação rápida</li>
           </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular o Consignado CLT" class="btn btn-verde">Simular CLT</a>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular o Consignado CLT" class="btn btn-verde">Simular CLT</a>
         </div>
         
         <div class="card fade-in">
@@ -798,7 +796,7 @@
             <li>Sem burocracia</li>
             <li>Aprovação rápida</li>
           </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular crédito para aposentado/pensionista" class="btn btn-verde">Simular Agora</a>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular crédito para aposentado/pensionista" class="btn btn-verde">Simular Agora</a>
         </div>
         
         <div class="card fade-in">
@@ -812,7 +810,7 @@
             <li>Processo simples</li>
             <li>Atendimento humanizado</li>
           </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular crédito no Bolsa Família" class="btn btn-verde">Consultar</a>
+          <a href="https://wa.me/5592985954909?text=Olá! Gostaria de simular crédito no Bolsa Família" class="btn btn-verde">Consultar</a>
         </div>
       </div>
     </div>
@@ -824,7 +822,7 @@
       <div class="destaque-content fade-in">
         <h2>Simulação 100% Gratuita</h2>
         <p>Descubra agora quanto você pode receber hoje mesmo sem compromisso</p>
-        <a href="https://wa.me/5592992637013" class="btn btn-verde">Fazer Simulação Agora</a>
+        <a href="https://wa.me/5592985954909" class="btn btn-verde">Fazer Simulação Agora</a>
       </div>
     </div>
   </section>
@@ -833,19 +831,20 @@
   <section class="sobre" id="sobre">
     <div class="container">
       <div class="section-title">
-        <h2>Sobre a Assessoria Capital Financeira</h2>
+        <h2>Sobre a ACapital Financeira</h2>
         <p>Conheça nossa história e diferenciais no mercado financeiro</p>
       </div>
       
       <div class="sobre-content">
         <div class="sobre-img fade-in">
           <!-- Espaço para sua imagem -->
-          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe Assessoria Capital Financeira">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe ACapital Financeira">
+          <!-- Para usar sua própria imagem, substitua o link acima pelo caminho da sua imagem -->
         </div>
         
         <div class="sobre-text fade-in">
-          <h2>Mais de 10 anos oferecendo as melhores soluções financeiras</h2>
-          <p>A Assessoria Capital Financeira nasceu com o objetivo de simplificar o acesso ao crédito para todos os brasileiros, com transparência, agilidade e condições que cabem no seu bolso.</p>
+          <h2>Oferecemos as melhores soluções financeiras</h2>
+          <p>A ACapital Financeira nasceu com o objetivo de simplificar o acesso ao crédito para todos os brasileiros, com transparência, agilidade e condições que cabem no seu bolso.</p>
           <p>Nossa equipe é especializada em encontrar a melhor solução para cada perfil, sempre com atendimento humanizado e personalizado.</p>
           
           <div class="sobre-vantagens">
@@ -934,7 +933,7 @@
             <div class="info-text">
               <h4>WhatsApp</h4>
               <p>Atendimento rápido via WhatsApp</p>
-              <a href="https://wa.me/5592992637013" class="btn btn-verde" style="margin-top: 10px;">Conversar Agora</a>
+              <a href="https://wa.me/5592985954909" class="btn btn-verde" style="margin-top: 10px;">Conversar Agora</a>
             </div>
           </div>
         </div>
@@ -983,15 +982,13 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <!-- Logo no footer (opcional) -->
-          <img src="8.png" alt="Assessoria Capital Financeira">
-          <h3><span>Assessoria Capital</span> Financeira</h3>
+          <h3><span>ACapital</span> Financeira</h3>
           <p>Segurança, transparência e confiança em primeiro lugar.</p>
           
           <div class="footer-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5592992637013"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/5592985954909"><i class="fab fa-whatsapp"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
@@ -1011,13 +1008,13 @@
           <p><i class="fas fa-phone-alt"></i> (92) 4102-3246</p>
           <p><i class="fas fa-mobile-alt"></i> (92) 99263-7013</p>
           <p><i class="fas fa-map-marker-alt"></i> Rua Acajá, 04 – Flores</p>
-          <p><i class="fas fa-envelope"></i> contato@assessoriacapital.com.br</p>
+          <p><i class="fas fa-envelope"></i> contato@acapitalfinanceira.com</p>
         </div>
       </div>
       
       <div class="copyright">
-        <p><span>Assessoria Capital Financeira</span> © 2026 - Todos os direitos reservados.</p>
-        <p>CNPJ: 00.000.000/0000-00</p>
+        <p><span>ACapital Financeira</span> © 2026 - Todos os direitos reservados.</p>
+        <p>CNPJ: 64.169.520/0001-05</p>
       </div>
     </div>
   </footer>
@@ -1074,7 +1071,7 @@
       const texto = `Olá! Gostaria de mais informações sobre serviços financeiros.%0A%0ANome: ${nome}%0ATelefone: ${telefone}%0AServiço: ${servico}%0AMensagem: ${mensagem}`;
       
       // Redirecionar para WhatsApp
-      window.open(`https://wa.me/5592992637013?text=${texto}`, '_blank');
+      window.open(`https://wa.me/5592985954909?text=${texto}`, '_blank');
       
       // Limpar formulário
       this.reset();
@@ -1108,4 +1105,6 @@
         }
       });
     });
-  </
+  </script>
+</body>
+</html>
