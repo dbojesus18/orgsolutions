@@ -285,10 +285,7 @@
     .carrossel-slide {
       flex: 0 0 calc(33.333% - 14px);
       min-width: calc(33.333% - 14px);
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
       overflow: hidden;
-      box-shadow: var(--sombra);
       transition: all 0.4s ease;
     }
 
@@ -868,36 +865,21 @@
           <div class="carrossel-slide">
             <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/clt.jpeg" alt="Consignado CLT" onerror="this.src='https://via.placeholder.com/400x250/7fce42/08350b?text=CLT'">
             <div class="slide-content">
-              <h3>Consignado CLT</h3>
-              <p>Crédito com desconto em folha para trabalhadores CLT</p>
-            </div>
           </div>
           
           <!-- Slide 3 - Aposentados -->
           <div class="carrossel-slide">
             <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/aposentados.jpeg" alt="Aposentados e Pensionistas" onerror="this.src='https://via.placeholder.com/400x250/2262d5/ffffff?text=Aposentados'">
-            <div class="slide-content">
-              <h3>Aposentados e Pensionistas</h3>
-              <p>Condições especiais para aposentados do INSS</p>
-            </div>
           </div>
           
           <!-- Slide 4 - Bolsa Família -->
           <div class="carrossel-slide">
             <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/bolsafamilia.jpeg" alt="Bolsa Família" onerror="this.src='https://via.placeholder.com/400x250/7fce42/08350b?text=Bolsa+Família'">
-            <div class="slide-content">
-              <h3>Bolsa Família</h3>
-              <p>Crédito acessível para beneficiários do Bolsa Família</p>
-            </div>
           </div>
           
           <!-- Slide 5 - Servidor Público -->
           <div class="carrossel-slide">
             <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/servidor.jpeg" alt="Servidor Público" onerror="this.src='https://via.placeholder.com/400x250/2262d5/ffffff?text=Servidor+Público'">
-            <div class="slide-content">
-              <h3>Servidor Público</h3>
-              <p>Linhas de crédito exclusivas para servidores</p>
-            </div>
           </div>
         </div>
       </div>
@@ -1221,7 +1203,7 @@
         currentIndex = 0;
       }
       updateCarrossel();
-    }, 5000);
+    }, 15000);
     
     // Form submission
     document.getElementById('formContato').addEventListener('submit', function(e) {
