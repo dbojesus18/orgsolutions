@@ -89,6 +89,26 @@
       color: white;
     }
 
+    .btn-carrossel {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      background: var(--gradiente-verde);
+      color: #08350b;
+      margin-top: 15px;
+    }
+
+    .btn-carrossel:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sombra-hover);
+    }
+
     .section-title {
       text-align: center;
       margin-bottom: 60px;
@@ -242,82 +262,137 @@
       margin-top: 40px;
     }
 
-    /* SERVIÇOS */
+    /* SERVIÇOS - CARROSSEL */
     .servicos {
       padding: 100px 0;
       background: linear-gradient(135deg, #1a1a1a, #2c3e50);
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    .carrossel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 20px 0;
     }
 
-    .card {
-      background: var(--branco);
+    .carrossel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 20px;
+    }
+
+    .carrossel-slide {
+      flex: 0 0 calc(33.333% - 14px);
+      min-width: calc(33.333% - 14px);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
-      padding: 40px 30px;
+      overflow: hidden;
       box-shadow: var(--sombra);
       transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
     }
 
-    .card:hover {
+    .carrossel-slide:hover {
       transform: translateY(-10px);
       box-shadow: var(--sombra-hover);
     }
 
-    .card::before {
-      content: '';
-      position: absolute;
+    .carrossel-slide img {
       width: 100%;
-      height: 5px;
-      background: var(--gradiente-verde);
-      top: 0;
-      left: 0;
-      z-index: 2;
+      height: 250px;
+      object-fit: cover;
+      display: block;
     }
 
-    .card-icon {
-      width: 70px;
-      height: 70px;
-      background: var(--gradiente-azul);
+    .carrossel-slide .slide-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .carrossel-slide h3 {
+      color: var(--azul);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .carrossel-slide p {
+      color: var(--escuro);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .carrossel-btn-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .carrossel-btn {
+      display: inline-block;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      background: var(--gradiente-verde);
+      color: #08350b;
+      box-shadow: var(--sombra);
+    }
+
+    .carrossel-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sombra-hover);
+    }
+
+    .carrossel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .carrossel-nav button {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid var(--verde);
+      color: var(--verde);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
-      color: white;
-      font-size: 1.8rem;
     }
 
-    .card h3 {
-      color: var(--azul);
-      margin-bottom: 20px;
-      font-size: 1.5rem;
+    .carrossel-nav button:hover {
+      background: var(--verde);
+      color: #08350b;
     }
 
-    .card ul {
-      list-style: none;
-      margin-bottom: 30px;
+    .carrossel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    .card ul li {
-      margin-bottom: 12px;
-      padding-left: 30px;
-      position: relative;
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .card ul li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--verde);
-      font-weight: bold;
-      font-size: 1.2rem;
+    .dot.active {
+      background: var(--verde);
+      transform: scale(1.2);
     }
 
     /* DESTAQUE */
@@ -444,10 +519,6 @@
     .servicos .section-title h2::after,
     .sobre .section-title h2::after {
       background: var(--gradiente-verde);
-    }
-
-    .servicos .card {
-      background: rgba(255, 255, 255, 0.95);
     }
 
     /* CONTATO */
@@ -661,6 +732,11 @@
       .sobre-img {
         width: 100%;
       }
+
+      .carrossel-slide {
+        flex: 0 0 calc(50% - 10px);
+        min-width: calc(50% - 10px);
+      }
     }
 
     @media (max-width: 768px) {
@@ -700,6 +776,11 @@
       .logo img {
         height: 50px;
       }
+
+      .carrossel-slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+      }
     }
 
     @media (max-width: 576px) {
@@ -716,10 +797,6 @@
       }
       
       .sobre-vantagens {
-        grid-template-columns: 1fr;
-      }
-      
-      .cards {
         grid-template-columns: 1fr;
       }
 
@@ -772,71 +849,78 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
+  <!-- SERVIÇOS - CARROSSEL -->
   <section class="servicos" id="servicos">
     <div class="container">
       <div class="section-title">
         <h2>Nossas Soluções Financeiras</h2>
-        <p>Escolha a opção ideal para você e faça sua simulação sem compromisso</p>
+        <p>Conheça nossas opções de crédito</p>
       </div>
       
-      <div class="cards">
-        <div class="card fade-in">
-          <div class="card-icon">
-            <i class="fas fa-piggy-bank"></i>
+      <div class="carrossel-container">
+        <div class="carrossel-track" id="carrosselTrack">
+          <!-- Slide 1 - FGTS -->
+          <div class="carrossel-slide">
+            <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/fgts.jpeg" alt="Antecipação FGTS" onerror="this.src='https://via.placeholder.com/400x250/2262d5/ffffff?text=FGTS'">
+            <div class="slide-content">
+              <h3>Antecipação FGTS</h3>
+              <p>Dinheiro rápido do seu FGTS com as melhores taxas</p>
+            </div>
           </div>
-          <h3>Antecipação FGTS</h3>
-          <ul>
-            <li>Sem parcelas mensais</li>
-            <li>Desconto direto no FGTS</li>
-            <li>Mesmo negativado</li>
-            <li>Dinheiro rápido na conta</li>
-          </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular a Antecipação do FGTS" class="btn btn-verde">Simular FGTS</a>
-        </div>
-        
-        <div class="card fade-in">
-          <div class="card-icon">
-            <i class="fas fa-file-invoice-dollar"></i>
+          
+          <!-- Slide 2 - CLT -->
+          <div class="carrossel-slide">
+            <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/clt.jpeg" alt="Consignado CLT" onerror="this.src='https://via.placeholder.com/400x250/7fce42/08350b?text=CLT'">
+            <div class="slide-content">
+              <h3>Consignado CLT</h3>
+              <p>Crédito com desconto em folha para trabalhadores CLT</p>
+            </div>
           </div>
-          <h3>Consignado CLT</h3>
-          <ul>
-            <li>Desconto em folha</li>
-            <li>Juros reduzidos</li>
-            <li>Parcelas fixas</li>
-            <li>Liberação rápida</li>
-          </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular o Consignado CLT" class="btn btn-verde">Simular CLT</a>
-        </div>
-        
-        <div class="card fade-in">
-          <div class="card-icon">
-            <i class="fas fa-user-tie"></i>
+          
+          <!-- Slide 3 - Aposentados -->
+          <div class="carrossel-slide">
+            <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/aposentados.jpeg" alt="Aposentados e Pensionistas" onerror="this.src='https://via.placeholder.com/400x250/2262d5/ffffff?text=Aposentados'">
+            <div class="slide-content">
+              <h3>Aposentados e Pensionistas</h3>
+              <p>Condições especiais para aposentados do INSS</p>
+            </div>
           </div>
-          <h3>Aposentados e Pensionistas</h3>
-          <ul>
-            <li>Taxas reduzidas</li>
-            <li>Aproveite a margem</li>
-            <li>Sem burocracia</li>
-            <li>Aprovação rápida</li>
-          </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular crédito para aposentado/pensionista" class="btn btn-verde">Simular Agora</a>
-        </div>
-        
-        <div class="card fade-in">
-          <div class="card-icon">
-            <i class="fas fa-hands-helping"></i>
+          
+          <!-- Slide 4 - Bolsa Família -->
+          <div class="carrossel-slide">
+            <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/bolsafamilia.jpeg" alt="Bolsa Família" onerror="this.src='https://via.placeholder.com/400x250/7fce42/08350b?text=Bolsa+Família'">
+            <div class="slide-content">
+              <h3>Bolsa Família</h3>
+              <p>Crédito acessível para beneficiários do Bolsa Família</p>
+            </div>
           </div>
-          <h3>Bolsa Família</h3>
-          <ul>
-            <li>Recebendo no Caixa Tem</li>
-            <li>Parcelas acessíveis</li>
-            <li>Processo simples</li>
-            <li>Atendimento humanizado</li>
-          </ul>
-          <a href="https://wa.me/5592992637013?text=Olá! Gostaria de simular crédito no Bolsa Família" class="btn btn-verde">Consultar</a>
+          
+          <!-- Slide 5 - Servidor Público -->
+          <div class="carrossel-slide">
+            <img src="https://raw.githubusercontent.com/dbojesus18/orgsolutions/main/servidor.jpeg" alt="Servidor Público" onerror="this.src='https://via.placeholder.com/400x250/2262d5/ffffff?text=Servidor+Público'">
+            <div class="slide-content">
+              <h3>Servidor Público</h3>
+              <p>Linhas de crédito exclusivas para servidores</p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Botão único Simular Agora -->
+      <div class="carrossel-btn-container">
+        <a href="https://wa.me/5592992637013" class="carrossel-btn">
+          <i class="fab fa-whatsapp"></i> SIMULAR AGORA
+        </a>
+      </div>
+
+      <!-- Navegação do Carrossel -->
+      <div class="carrossel-nav">
+        <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <!-- Dots indicadores -->
+      <div class="carrossel-dots" id="carrosselDots"></div>
     </div>
   </section>
 
@@ -981,6 +1065,7 @@
                 <option value="clt">Consignado CLT</option>
                 <option value="aposentado">Aposentados</option>
                 <option value="bolsa-familia">Bolsa Família</option>
+                <option value="servidor">Servidor Público</option>
               </select>
             </div>
             
@@ -1076,6 +1161,71 @@
     document.querySelectorAll('.card, .fade-in').forEach(el => {
       observer.observe(el);
     });
+    
+    // Carrossel
+    const track = document.getElementById('carrosselTrack');
+    const slides = document.querySelectorAll('.carrossel-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('carrosselDots');
+    
+    let currentIndex = 0;
+    let slidesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    
+    // Criar dots
+    const totalSlides = slides.length;
+    const totalPages = Math.ceil(totalSlides / slidesPerView);
+    
+    for (let i = 0; i < totalPages; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => {
+        currentIndex = i * slidesPerView;
+        if (currentIndex >= totalSlides) currentIndex = totalSlides - slidesPerView;
+        updateCarrossel();
+      });
+      dotsContainer.appendChild(dot);
+    }
+    
+    function updateCarrossel() {
+      const slideWidth = slides[0].offsetWidth + 20; // 20px é o gap
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      
+      // Atualizar dots
+      const dots = document.querySelectorAll('.dot');
+      const activeDotIndex = Math.floor(currentIndex / slidesPerView);
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeDotIndex);
+      });
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      currentIndex = Math.max(0, currentIndex - slidesPerView);
+      updateCarrossel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex = Math.min(totalSlides - slidesPerView, currentIndex + slidesPerView);
+      updateCarrossel();
+    });
+    
+    window.addEventListener('resize', () => {
+      slidesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
+      if (currentIndex > totalSlides - slidesPerView) {
+        currentIndex = Math.max(0, totalSlides - slidesPerView);
+      }
+      updateCarrossel();
+    });
+    
+    // Autoplay opcional (passa automaticamente a cada 5 segundos)
+    setInterval(() => {
+      if (currentIndex < totalSlides - slidesPerView) {
+        currentIndex += slidesPerView;
+      } else {
+        currentIndex = 0;
+      }
+      updateCarrossel();
+    }, 5000);
     
     // Form submission
     document.getElementById('formContato').addEventListener('submit', function(e) {
